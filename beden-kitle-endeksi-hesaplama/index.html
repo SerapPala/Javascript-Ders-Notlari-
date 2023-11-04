@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Beden Kitle Endeksi Hesaplama</title>
+</head>
+<body>
+    <h1>Javascript Vücut Kitle İndeksi Hesaplama </h1>
+    
+    <label>Boyunuzu Giriniz(m): </label>
+    <input type="number" id="boy">
+    <label>Kilonuzu giriniz(kg): </label>
+    <input type="number" id="kilo">
+
+    <button id="hesapla" onclick="hesapla()">Hesapla</button>
+
+    
+    <script>
+        function hesapla(){
+            var boy=document.getElementById("boy").value;
+            var kilo=document.getElementById("kilo").value;
+
+            var b = Number(boy);
+            var k = Number(kilo);
+
+            var ind = k / (b*b);
+
+            if(ind<18)
+                alert("Zayıf" + " " + ind.toFixed(2));
+            else if(ind>=18 && ind<25)
+                alert("Normal" + " " +  ind.toFixed(2));
+            else if(ind>=25 && ind<30)
+                alert("Kilolu" + " " + ind.toFixed(2));
+            else if(ind>=30 && ind<40)
+                alert("Obez" + " " +  ind.toFixed(2));
+            else
+                alert("İleri Derece Obez" + " " +  ind.toFixed(2));
+        }
+
+    </script>
+</body>
+</html>
